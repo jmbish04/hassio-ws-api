@@ -1,0 +1,28 @@
+name = "hassio-ws-api"
+main = "dist/index.js"
+compatibility_date = "2024-04-05"
+
+[[durable_objects.bindings]]
+name = "HASS_DO"
+class_name = "HassDO"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "dummy"
+
+[[d1_databases]]
+binding = "DB"
+id = "dummy"
+
+[ai]
+binding = "AI"
+
+[r2_buckets]
+binding = "LOG_BUCKET"
+name = "dummy"
+
+[vars]
+HOMEASSISTANT_TOKEN = "${HOMEASSISTANT_TOKEN}"
+HOMEASSISTANT_URL = "${HOMEASSISTANT_URL}"
+HOMEASSISTANT_WEBSOCKET_URL = "${HOMEASSISTANT_WEBSOCKET_URL}"
+AI_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"

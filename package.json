@@ -1,0 +1,25 @@
+{
+  "name": "hassio-ws-api",
+  "version": "1.0.0",
+  "description": "Connects to Hassio via WebSocket and leverages @digital-alchemy/hass along with cloudflare worker bindings like D1, AI, R2 (logs), KV, etc.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@digital-alchemy/automation": "^25.3.1",
+    "@digital-alchemy/hass": "^25.5.2",
+    "@digital-alchemy/synapse": "^25.3.1",
+    "@digital-alchemy/type-writer": "^25.5.1",
+    "hono": "^4.7.11",
+    "zod": "^3.25.56"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250607.0"
+  }
+}
