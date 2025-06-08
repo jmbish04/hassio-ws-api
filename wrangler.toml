@@ -1,5 +1,6 @@
 name = "hassio-ws-api"
 main = "dist/index.js"
+account_id = "${CLOUDFLARE_ACCOUNT_ID}"
 compatibility_date = "2024-04-05"
 
 [[durable_objects.bindings]]

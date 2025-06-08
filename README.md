@@ -24,3 +24,6 @@ npm run build
 ```
 
 The worker entry point is `src/index.ts` and outputs to `dist/index.js`.
+
+## Deployment
+The repository includes a GitHub Actions workflow that automatically publishes the worker whenever commits are pushed to the `main` branch. Set `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets in the repository settings so that the workflow can deploy using Wrangler.
