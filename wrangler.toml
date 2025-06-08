@@ -1,6 +1,15 @@
-name = "hassio-ws-api"
+name = "hassio-ws-api-v2"
 main = "dist/index.js"
 compatibility_date = "2024-04-05"
+compatibility_flags = ["nodejs_compat"]
+account_id = "b3304b14848de15c72c24a14b0cd187d"
+logpush = true
+
+[observability.logs]
+enabled = true
+
+[ai]
+binding = "AI"
 
 [[durable_objects.bindings]]
 name = "HASS_DO"
@@ -8,21 +17,25 @@ class_name = "HassDO"
 
 [[kv_namespaces]]
 binding = "KV"
-id = "dummy"
+id = "8e30bb13e55843ec835a83f7106bdde3"
 
 [[d1_databases]]
 binding = "DB"
-id = "dummy"
+database_name = "hassio-agent"
+database_id = "6fd26ae9-6e97-4293-983d-a4a3074f1aad"
+migrations_dir = "migrations"
 
 [ai]
 binding = "AI"
 
-[r2_buckets]
+# Logs
+[[r2_buckets]]
 binding = "LOG_BUCKET"
-name = "dummy"
+bucket_name = "cloudflare-managed-6a40525f"
 
 [vars]
 HOMEASSISTANT_TOKEN = "${HOMEASSISTANT_TOKEN}"
 HOMEASSISTANT_URL = "${HOMEASSISTANT_URL}"
 HOMEASSISTANT_WEBSOCKET_URL = "${HOMEASSISTANT_WEBSOCKET_URL}"
 AI_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"
+
